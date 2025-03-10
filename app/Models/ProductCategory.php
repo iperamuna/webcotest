@@ -32,4 +32,14 @@ final class ProductCategory extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    /*
+    * Get all of the type assignments for the product.
+    *
+    * @return MorphMany
+    */
+    public function typeAssignments()
+    {
+        return $this->morphMany(TypeAssignment::class, 'type_assignments')->with('type'); // Eager load 'type'
+    }
 }

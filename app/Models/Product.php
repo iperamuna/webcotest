@@ -8,6 +8,7 @@ use Carbon\CarbonInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 /**
  * @property int $id
@@ -41,5 +42,15 @@ final class Product extends Model
     public function color(): BelongsTo
     {
         return $this->belongsTo(ProductColor::class, 'product_color_id');
+    }
+
+    /*
+    * Get all of the type assignments for the product.
+    *
+    * @return MorphMany
+    */
+    public function typeAssignments()
+    {
+        return $this->morphMany(TypeAssignment::class, 'type_assignments')->with('type'); // Eager load 'type'
     }
 }

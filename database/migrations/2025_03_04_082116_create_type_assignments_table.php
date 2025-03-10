@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('type_assignments', function (Blueprint $table): void {
             $table->id();
-            $table->string('type_assignments_type');
-            $table->unsignedBigInteger('type_assignments_id');
+            $table->morphs('type_assignments');
             $table->string('my_bonus_field');
             $table->foreignId('type_id')->constrained('product_types');
             $table->timestamps();

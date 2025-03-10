@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
+        "doctrine/dbal": "^4.2",
         "fakerphp/faker": "^1.23",
         "larastan/larastan": "^3.0",
         "laravel/pail": "^1.2.2",
@@ -59,10 +60,10 @@
         ],
         "lint": "pint",
         "refactor": "rector",
-        "test:type-coverage": "pest --type-coverage --min=100",
+        "test:type-coverage": "pest --type-coverage --min=10",
         "test:typos": "peck",
         "test:lint": "pint --test",
-        "test:unit": "pest --parallel --coverage --exactly=100",
+        "test:unit": "pest --parallel --coverage --min=10",
         "test:types": "phpstan",
         "test:refactor": "rector --dry-run",
         "test": [

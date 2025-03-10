@@ -27,6 +27,6 @@ final class TypeAssignment extends Model
      */
     public function type(): BelongsTo
     {
-        return $this->belongsTo(ProductType::class);
+        return $this->belongsTo(ProductType::class, 'type_id');
     }
 }
