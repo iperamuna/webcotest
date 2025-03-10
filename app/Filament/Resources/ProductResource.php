@@ -18,6 +18,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 
+
 final class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
@@ -128,6 +129,7 @@ final class ProductResource extends Resource
             'index' => Pages\ListProducts::route('/'),
             'create' => Pages\CreateProduct::route('/create'),
             'edit' => Pages\EditProduct::route('/{record}/edit'),
+            'view' => Pages\ProductDetails::route('/{record}'),
         ];
     }
 }
