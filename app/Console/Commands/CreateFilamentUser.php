@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\Models\User;
+use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
 
-class CreateFilamentUser extends Command
+final class CreateFilamentUser extends Command
 {
     // The name and signature of the console command.
     protected $signature = 'filament:user:create
@@ -28,6 +30,7 @@ class CreateFilamentUser extends Command
         // Check if the user already exists
         if (User::where('email', $email)->exists()) {
             $this->error("A user with the email {$email} already exists.");
+
             return;
         }
 
@@ -41,6 +44,6 @@ class CreateFilamentUser extends Command
         // Assign a role if needed
         // $user->assignRole('admin'); // Uncomment if you want to assign a role like 'admin'
 
-        $this->info("Filament user created successfully!");
+        $this->info('Filament user created successfully!');
     }
 }
