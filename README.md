@@ -10,7 +10,7 @@ Follow the steps below to set up the project:
    Clone this repository to your local machine.
 
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/iperamuna/webcotest.git
    ```
 
 2. **Checkout the Develop Branch**  
