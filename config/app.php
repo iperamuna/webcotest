@@ -125,4 +125,10 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'asmorphic_extranet_api_email' => env('ASMORPHIC_EXTRANET_API_EMAIL'),
+
+    'asmorphic_extranet_api_password' => env('ASMORPHIC_EXTRANET_API_PASSWORD'),
+
+    'asmorphic_extranet_api_company_id' => env('ASMORPHIC_EXTRANET_API_COMPANY_ID'),
+
 ];
